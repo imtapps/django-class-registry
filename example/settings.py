@@ -33,8 +33,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.admin',
     'django.contrib.staticfiles',
-    
-    'registry',
+
+    'class_registry',
 )
 
 try:

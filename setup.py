@@ -3,7 +3,7 @@ from distutils.core import Command, setup
 import os
 import re
 
-from registry import VERSION
+from class_registry import VERSION
 
 REQUIREMENTS = [
     'django',
@@ -14,7 +14,6 @@ TEST_REQUIREMENTS = [
     'pep8',
     'pyflakes',
 ]
-
 
 def do_setup():
     setup(
