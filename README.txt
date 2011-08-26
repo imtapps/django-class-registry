@@ -1,1 +1,1 @@
-Define user generated validation requirements for django models.
+Register any classes like Django's admin.

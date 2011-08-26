@@ -3,24 +3,28 @@ from distutils.core import Command, setup
 import os
 import re
 
-from new_app import VERSION
+from registry import VERSION
 
 REQUIREMENTS = [
     'django',
 ]
 
-TEST_REQUIREMENTS = []
+TEST_REQUIREMENTS = [
+    'django-jenkins',
+    'pep8',
+    'pyflakes',
+]
 
 
 def do_setup():
     setup(
-        name="django-new_app",
+        name="django-class-registry",
         version=VERSION,
-        author="Author Name",
-        author_email="author_email",
-        description="Description for new_app.",
+        author="imtapps",
+        author_email="imtapps@apps-system.com",
+        description="Register any classes like Django's admin.",
         long_description=open('README.txt', 'r').read(),
-        url="http://www.example.com",
+        url="http://github.com/imtapps/django-class-registry",
         packages=find_packages(exclude=["example"]),
         install_requires=REQUIREMENTS,
         tests_require=TEST_REQUIREMENTS,
