@@ -39,7 +39,7 @@ INSTALLED_APPS = (
 
 try:
     import django_jenkins
-    PROJECT_APPS = ['registry']
+    PROJECT_APPS = ['class_registry']
 
     INSTALLED_APPS = INSTALLED_APPS + ('django_jenkins',)
     JENKINS_TASKS = (
