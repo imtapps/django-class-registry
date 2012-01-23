@@ -5,11 +5,10 @@ import re
 
 from class_registry import VERSION
 
-REQUIREMENTS = [
-    'django',
-]
+REQUIREMENTS = []
 
 TEST_REQUIREMENTS = [
+    'django',
     'django-jenkins',
     'pep8',
     'pyflakes',
@@ -30,7 +29,7 @@ def do_setup():
         test_suite='runtests.runtests',
         zip_safe=False,
         classifiers = [
-            "Development Status :: 3 - Alpha",
+            "Development Status :: 5 - Production/Stable",
             "Environment :: Web Environment",
             "Framework :: Django",
             "Intended Audience :: Developers",
