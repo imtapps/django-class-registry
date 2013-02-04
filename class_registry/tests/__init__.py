@@ -6,6 +6,7 @@ from class_registry import Registry, AlreadyRegistered, NotRegistered
 
 __all__ = (
     'RegistryTests',
+    'AutoImportTests',
 )
 
 class RegistryTests(TestCase):
@@ -81,4 +82,14 @@ class RegistryTests(TestCase):
         lc.register(TestClass)
 
         self.assertEqual(lc["code1"], TestClass)
+
+
+class AutoImportTests(TestCase):
+
+    def test_when_demo_is_imported_registry_contains_all_classes_under_action_package(self):
+        from class_registry.tests.demo.actions import action_registry as actions
+
+        self.assertIn('one', actions)
+        self.assertIn('two', actions)
+        self.assertIn('three', actions)
 
