@@ -9,7 +9,7 @@ class AutoImport(object):
 
     def get_package_name(self, package_file_path):
         dotted_path = package_file_path.replace("/", ".")
-        idx = dotted_path.index(self.module.__name__)
+        idx = dotted_path.index(self.module.__name__.replace("..", "."))
         return dotted_path[idx:]
 
     def get_module_name(self, f):

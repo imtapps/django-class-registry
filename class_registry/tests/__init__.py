@@ -2,12 +2,24 @@
 from unittest import TestCase
 
 
+from class_registry.auto_import import AutoImport
 from class_registry import Registry, AlreadyRegistered, NotRegistered
 
 __all__ = (
     'RegistryTests',
     'AutoImportTests',
 )
+
+
+class FakeModule(object):
+
+    def __init__(self, name):
+        self.name = name
+
+    @property
+    def __name__(self):
+        return self.name
+
 
 class RegistryTests(TestCase):
 
@@ -85,6 +97,18 @@ class RegistryTests(TestCase):
 
 
 class AutoImportTests(TestCase):
+
+    def test_will_replace_any_slash_in_the_path_with_a_dot_instead(self):
+        fake_module = FakeModule(name='project')
+        auto_import = AutoImport(fake_module)
+        package_name = auto_import.get_package_name('foo/project')
+        self.assertEqual(package_name, 'project')
+
+    def test_will_replace_two_dots_in_the_module_name_when_running_south_migrations(self):
+        fake_module = FakeModule(name='project..app')
+        auto_import = AutoImport(fake_module)
+        package_name = auto_import.get_package_name('foo/project/app')
+        self.assertEqual(package_name, 'project.app')
 
     def test_when_demo_is_imported_registry_contains_all_classes_under_action_package(self):
         from class_registry.tests.demo.actions import action_registry as actions
