@@ -8,7 +8,7 @@ from class_registry import VERSION
 REQUIREMENTS = []
 
 TEST_REQUIREMENTS = [
-    'django',
+    'django<1.5',
     'django-jenkins',
     'coverage',
     'pep8',
