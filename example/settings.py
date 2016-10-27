@@ -11,6 +11,8 @@ for path in (grandparent, parent):
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+SECRET_KEY = 'i!eo$gcn72sguvx3wx%q^u#=3feh^^0&!$74n@$l@y4&s@rk0r'
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

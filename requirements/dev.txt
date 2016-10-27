@@ -1,0 +1,7 @@
+-r dist.txt
+django-jenkins
+coverage
+pep8
+pyflakes
+django_nose
+nosexcover
