@@ -49,13 +49,13 @@ class RegistryTests(TestCase):
 
         with self.assertRaises(AlreadyRegistered) as e:
             lc.register(test_class_two)
-        self.assertEqual("Key 'ABC' has already been registered as 'TestClass'.", e.exception.message)
+        self.assertEqual("Key 'ABC' has already been registered as 'TestClass'.", str(e.exception))
 
     def test_raises_not_registered_when_trying_to_access_an_item_that_has_not_been_registered(self):
         lc = Registry()
         with self.assertRaises(NotRegistered) as e:
             lc['ABC']
-        self.assertEqual("Key 'ABC' has not been registered.", e.exception.message)
+        self.assertEqual('"Key \'ABC\' has not been registered."', str(e.exception))
 
     def test_classes_property_returns_same_object(self):
         # for backwards compatibility. Now that registry is a dict, the old
