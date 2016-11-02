@@ -1,6 +1,5 @@
 VERSION = '1.0.0'
 
-
 import warnings
 
 
@@ -32,6 +31,7 @@ class Registry(dict):
     <class 'path.to.module.Example'>
 
     """
+
     def __init__(self, key_name='key', *args, **kwargs):
         self.key_name = key_name
         super(Registry, self).__init__(*args, **kwargs)

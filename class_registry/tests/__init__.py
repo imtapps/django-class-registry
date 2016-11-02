@@ -1,6 +1,5 @@
 from unittest import TestCase
 
-
 from class_registry.auto_import import AutoImport
 from class_registry import Registry, AlreadyRegistered, NotRegistered
 
@@ -18,7 +17,7 @@ class FakeModule(object):
 class RegistryTests(TestCase):
 
     def get_test_class(self, key="ABC"):
-        return type('TestClass', (object,), {'key': key})
+        return type('TestClass', (object, ), {'key': key})
 
     def test_register_adds_item_to_collection(self):
         lc = Registry()
@@ -43,7 +42,7 @@ class RegistryTests(TestCase):
 
     def test_raises_already_registered_when_key_has_already_been_registered(self):
         test_class_one = self.get_test_class("ABC")
-        test_class_two = type('TestClassTwo', (object,), {'key': "ABC"})
+        test_class_two = type('TestClassTwo', (object, ), {'key': "ABC"})
         lc = Registry()
         lc.register(test_class_one)
 
@@ -74,7 +73,7 @@ class RegistryTests(TestCase):
 
     def test_registry_allows_customizable_key_name(self):
         lc = Registry(key_name='obj_code')
-        TestClass = type('TestClass', (object,), {'obj_code': "code1"})
+        TestClass = type('TestClass', (object, ), {'obj_code': "code1"})
         lc.register(TestClass)
         self.assertEqual(lc["code1"], TestClass)
 

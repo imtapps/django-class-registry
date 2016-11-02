@@ -5,5 +5,4 @@ warnings.warn(
     PendingDeprecationWarning,
 )
 
-
 from class_registry import Registry  # noqa

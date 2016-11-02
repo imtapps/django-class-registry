@@ -2,7 +2,6 @@ from setuptools import setup, find_packages
 
 from class_registry import VERSION
 
-
 setup(
     name="django-class-registry",
     version=VERSION,
