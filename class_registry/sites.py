@@ -1,6 +1,3 @@
-
-__all__ = ('Registry',)
-
 import warnings
 
 warnings.warn(
@@ -8,4 +5,4 @@ warnings.warn(
     PendingDeprecationWarning,
 )
 
-from class_registry import Registry
+from class_registry import Registry  # noqa

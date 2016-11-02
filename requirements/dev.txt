@@ -1,0 +1,6 @@
+-r dist.txt
+coverage
+pep8
+pyflakes
+django_nose
+nosexcover

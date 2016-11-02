@@ -1,9 +1,5 @@
-VERSION = '0.0.5'
-
-
 import warnings
 
-__all__ = ('Registry',)
 
 class AlreadyRegistered(Exception):
     pass
@@ -33,6 +29,7 @@ class Registry(dict):
     <class 'path.to.module.Example'>
 
     """
+
     def __init__(self, key_name='key', *args, **kwargs):
         self.key_name = key_name
         super(Registry, self).__init__(*args, **kwargs)
@@ -59,7 +56,7 @@ class Registry(dict):
         The registry is a dictionary. Raising `NotRegistered` instead of
         a `KeyError` seems more appropriate.
         """
-        if self.has_key(key):
+        if key in self:
             return super(Registry, self).__getitem__(key)
 
         raise NotRegistered("Key '{key}' has not been registered.".format(key=key))
