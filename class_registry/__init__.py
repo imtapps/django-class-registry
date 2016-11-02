@@ -1,5 +1,3 @@
-VERSION = '1.0.0'
-
 import warnings
 
 
