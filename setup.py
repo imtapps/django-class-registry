@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="django-class-registry",
-    version='1.0.1',
+    version='1.1.0',
     author="IMT Computer Services",
     author_email="imtapps@apps-system.com",
     description="Register any classes like Django's admin.",
