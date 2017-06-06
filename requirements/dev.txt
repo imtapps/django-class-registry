@@ -2,5 +2,5 @@
 coverage>=4.0.1,<5
 pep8>=1.6.2,<2
 pyflakes>=1.0.0,<2
-django_nose>=1.4.2,<2
+django-nose>=1.4.2,<2
 nosexcover>=1.0.10,<2

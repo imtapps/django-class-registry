@@ -28,12 +28,7 @@ ROOT_URLCONF = 'urls'
 TEMPLATE_DIRS = (abspath(join(parent, 'templates')), )
 
 INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.admin',
-    'django.contrib.staticfiles',
-    'class_registry',
-    'django_nose',
+    'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.admin',
+    'django.contrib.staticfiles', 'class_registry', 'django_nose',
 )
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
