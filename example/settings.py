@@ -11,6 +11,8 @@ for path in (grandparent, parent):
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+SECRET_KEY = 'i!eo$gcn72sguvx3wx%q^u#=3feh^^0&!$74n@$l@y4&s@rk0r'
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -23,9 +25,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 ROOT_URLCONF = 'urls'
 
-TEMPLATE_DIRS = (
-    abspath(join(parent, 'templates')),
-)
+TEMPLATE_DIRS = (abspath(join(parent, 'templates')), )
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -33,7 +33,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.admin',
     'django.contrib.staticfiles',
-
     'class_registry',
     'django_nose',
 )
